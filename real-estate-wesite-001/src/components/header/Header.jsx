@@ -12,7 +12,11 @@ function Header() {
       <Container>
         <Navbar.Brand href="#home" className="d-flex align-items-center">
           <BiHomeAlt size={30} className="me-2" style={{ color: 'green' }} />
-          <span style={{ fontWeight: 'bold', fontSize: '1.5rem', color: 'green' }}>RentUP</span>
+          <div>
+            <h3 className="fw-bold text-success">KeyNest</h3>
+            <h5 className="fw-bold text-muted" style={{ fontSize: '0.8rem' }}>Unlock Your Perfect Nest</h5>
+          </div>
+          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
