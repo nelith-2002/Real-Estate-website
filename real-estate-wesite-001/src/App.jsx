@@ -1,12 +1,9 @@
 import './App.css';
-import Home from './home';
+import Pagenavigator from './pages/Pagenavigator';
 
 function App() {
   return (
-    <div>
-      <h1>Hello world</h1>
-      <Home />
-    </div>
+    <Pagenavigator />
   );
 }
 
