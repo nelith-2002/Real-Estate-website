@@ -1,0 +1,122 @@
+{
+	"properties": [
+        {
+            "id":"prop1",
+			"type":"House",
+            "bedrooms":3,
+			"price":750000,
+			"tenure":"Freehold",
+			"description":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+			"location":"Petts Wood Road, Petts Wood, Orpington BR5",
+			"picture":"images/prop1pic1small.png",
+			"url":"properties/prop1.html",
+            "added": {
+                "month":"October",
+                "day":12,
+                "year":2022
+            }
+        },
+		{
+            "id":"prop2",
+			"type":"Flat",
+            "bedrooms":2,
+			"price":399995,
+			"tenure":"Freehold",
+			"description":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+			"location":"Crofton Road Orpington BR6",
+			"picture":"images/prop2pic1small.png",
+			"url":"properties/prop2.html",
+            "added": {
+                "month":"September",
+                "day":14,
+                "year":2022
+            }
+        },
+        {
+    "id": "prop3",
+    "type": "Flat",
+    "bedrooms": 3,
+    "price": 550000,
+    "tenure": "Leasehold",
+    "description": "This stunning three-bedroom apartment offers a spacious living area with a modern open-plan kitchen and living room. The property boasts a private balcony with panoramic city views and includes premium appliances, ample storage, and a sleek, tiled bathroom. The master bedroom features an en-suite, and the property benefits from secure underground parking and a 24-hour concierge service.",
+    "location": "Riverside Apartments, Chelsea SW10",
+    "picture": "images/prop3pic1small.png",
+    "url": "properties/prop3.html",
+    "added": {
+        "month": "August",
+        "day": 10,
+        "year": 2023
+    }
+},
+{
+    "id": "prop4",
+    "type": "House",
+    "bedrooms": 5,
+    "price": 1200000,
+    "tenure": "Freehold",
+    "description": "An impressive five-bedroom detached house located in a peaceful residential area. This property features a large garden, a double garage, and a spacious driveway. The interior includes a fully fitted kitchen, a separate dining room, a lounge with a fireplace, and a master bedroom with an en-suite. The house is within walking distance of excellent schools and local amenities.",
+    "location": "Elmwood Drive, High Wycombe HP12",
+    "picture": "images/prop4pic1small.png",
+    "url": "properties/prop4.html",
+    "added": {
+        "month": "July",
+        "day": 20,
+        "year": 2023
+    }
+},
+{
+    "id": "prop5",
+    "type": "Villa",
+    "bedrooms": 4,
+    "price": 750000,
+    "tenure": "Freehold",
+    "description": "This modern four-bedroom townhouse is situated in a gated development. The property is arranged over three floors and includes a large living room, an open-plan kitchen with a breakfast bar, and a private garden. The master suite occupies the entire top floor and features an en-suite and a walk-in wardrobe. Ideal for families looking for a quiet yet accessible location.",
+    "location": "Maple Close, Reading RG1",
+    "picture": "images/prop5pic1small.png",
+    "url": "properties/prop5.html",
+    "added": {
+        "month": "June",
+        "day": 15,
+        "year": 2024
+    }
+},
+{
+    "id": "prop6",
+    "type": "House",
+    "bedrooms": 2,
+    "price": 350000,
+    "tenure": "Freehold",
+    "description": "Charming two-bedroom cottage set in a picturesque village location. This property features a cosy living room with a wood-burning stove, a modern kitchen, and a lovely garden with a patio area. Ideal for first-time buyers or those looking for a quiet retreat. The cottage is a short drive from local shops and transport links.",
+    "location": "Rosewood Lane, Cotswolds GL7",
+    "picture": "images/prop6pic1small.jpeg",
+    "url": "properties/prop6.html",
+    "added": {
+        "month": "May",
+        "day": 30,
+        "year": 2024
+    }
+},
+{
+    "id": "prop7",
+    "type": "House",
+    "bedrooms": 0,
+    "price": 200000,
+    "tenure": "Leasehold",
+    "description": "A bright and airy studio flat located in the heart of the city. The flat features an open-plan living space with a fully equipped kitchen and a modern bathroom. Perfect for professionals or investors, the property is within walking distance of major transport hubs and vibrant city nightlife.",
+    "location": "City Center, Manchester M1",
+    "picture": "images/prop7pic1small.jpg",
+    "url": "properties/prop7.html",
+    "added": {
+        "month": "April",
+        "day": 12,
+        "year": 2024
+    }
+}
+
+
+
+
+
+
+
+]}
