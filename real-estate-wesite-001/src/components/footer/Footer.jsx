@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope, FaYoutube } from 'react-icons/fa';
 import './Footer.css';
 
@@ -84,7 +84,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom text-center py-3">
-        <p className="mb-0">&copy; 2024 KeyNest. Designed by Nelith Nethsanda</p>
+        <p className="mb-1">&copy; 2024 KeyNest. Designed by Nelith Nethsanda</p>
       </div>
     </footer>
   );
