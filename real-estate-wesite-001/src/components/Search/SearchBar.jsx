@@ -43,8 +43,8 @@ const SearchBar = () => {
             <h1 className="fw-bold">Search Your Next Home</h1>
             <p>Discover the latest and top-rated properties available in your city</p>
             <Form className="search-form" onSubmit={handleSubmit}>
-              <Row className="gy-3 gx-3 align-items-end">
-                <Col xs={12} md={4} lg={2}>
+              <Row className="gy-3 align-items-end">
+                <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="postcode">
                     <Form.Label>Post Code</Form.Label>
                     <Form.Control
@@ -56,7 +56,7 @@ const SearchBar = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={4} lg={2}>
+                <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="propertyType">
                     <Form.Label>Property Type</Form.Label>
                     <Form.Select
@@ -70,7 +70,7 @@ const SearchBar = () => {
                     </Form.Select>
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={4} lg={3}>
+                <Col xs={12} md={6} lg={3}>
                   <Form.Group controlId="priceRange">
                     <Form.Label>Price Range</Form.Label>
                     <Row>
@@ -95,7 +95,7 @@ const SearchBar = () => {
                     </Row>
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={4} lg={2}>
+                <Col xs={12} md={6} lg={3}>
                   <Form.Group controlId="bedrooms">
                     <Form.Label>Bedrooms</Form.Label>
                     <Row>
@@ -120,7 +120,7 @@ const SearchBar = () => {
                     </Row>
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={4} lg={2}>
+                <Col xs={12} md={6} lg={3}>
                   <Form.Group controlId="dateAdded">
                     <Form.Label>Date Added</Form.Label>
                     <Form.Control
@@ -131,7 +131,7 @@ const SearchBar = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={4} lg={1}>
+                <Col xs={12} md={6} lg={2} className="text-center">
                   <Button
                     variant="success"
                     type="submit"
