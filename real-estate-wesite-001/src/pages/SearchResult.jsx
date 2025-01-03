@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import { FaHeart } from 'react-icons/fa';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
+import { FaHeart, FaMinusCircle } from 'react-icons/fa';
 import data from '../components/data/properties.json'; // Adjust the path if needed
 import './SearchResult.css';
 
@@ -27,9 +27,10 @@ const formatDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
-const SearchResults = () => {
+const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFavorites }) => {
   const [searchParams] = useSearchParams();
   const [filteredProperties, setFilteredProperties] = useState([]);
+  const navigate = useNavigate(); // Import and use `useNavigate`
 
   useEffect(() => {
     const filterProperties = () => {
@@ -76,43 +77,98 @@ const SearchResults = () => {
   }, [searchParams]);
 
   return (
-    <Container className="py-5">
-      <h1 className="text-center mb-4">Search Results</h1>
-      <Row className="g-4">
-        {filteredProperties.length > 0 ? (
-          filteredProperties.map((property) => (
-            <Col key={property.id} xs={12} md={6} lg={4}>
-              <Card className="h-100 property-card">
-                <div className="position-relative">
-                  <Card.Img
-                    variant="top"
-                    src={property.picture || '/placeholder.jpg'}
-                    className="property-image"
+    <Container fluid className="py-5">
+      <Row>
+        {/* Sidebar for Favorite List */}
+        <Col xs={12} md={4} lg={3} className="sticky-sidebar">
+          <h5>Favorite List</h5>
+          <ListGroup>
+            {favorites.length > 0 ? (
+              favorites.map((fav) => (
+                <ListGroup.Item key={fav.id} className="d-flex align-items-center">
+                  <img
+                    src={fav.picture}
+                    alt={fav.type}
+                    className="img-fluid"
+                    style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '5px' }}
                   />
-                 
-                  <button className="favorite-btn">
-                    <FaHeart />
-                  </button>
-                </div>
-                <Card.Body>
-                  <Card.Title>{property.type}</Card.Title>
-                  <p>{property.location}</p>
-                  <p>
-                    Price: £{property.price.toLocaleString()} | Bedrooms: {property.bedrooms}
-                  </p>
-                  <p>{property.shortdescription.slice(0, 1000)}</p>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))
-        ) : (
-          <Col xs={12}>
-            <div className="text-center py-5">
-              <h3>No properties found matching your criteria</h3>
-              <p>Try adjusting your search filters</p>
+                  <div>
+                    <p className="mb-0">£{fav.price.toLocaleString()}</p>
+                  </div>
+                  <Button
+                    variant="danger"
+                    size="sm"
+                    className="ms-auto"
+                    onClick={() => removeFromFavorites(fav.id)}
+                  >
+                    <FaMinusCircle />
+                  </Button>
+                </ListGroup.Item>
+              ))
+            ) : (
+              <p>No favorites added yet.</p>
+            )}
+          </ListGroup>
+          {favorites.length > 0 && (
+            <div className="mt-3">
+              <Button variant="danger" className="w-100" onClick={clearFavorites}>
+                Remove All
+              </Button>
             </div>
-          </Col>
-        )}
+          )}
+        </Col>
+
+        {/* Search Result Section */}
+        <Col xs={12} md={8} lg={9}>
+          <h1 className="text-center mb-4">Search Results</h1>
+          <Row className="g-4">
+            {filteredProperties.length > 0 ? (
+              filteredProperties.map((property) => (
+                <Col key={property.id} xs={12} md={6} lg={4}>
+                  <Card className="h-100 property-card">
+                    <div className="position-relative">
+                      <Card.Img
+                        variant="top"
+                        src={property.picture || '/placeholder.jpg'}
+                        className="property-image"
+                      />
+                      <button
+                        className="favorite-btn"
+                        onClick={() => addToFavorites(property)}
+                      >
+                        <FaHeart />
+                      </button>
+                    </div>
+                    <Card.Body>
+                      <Card.Title>{property.type}</Card.Title>
+                      <p>{property.location}</p>
+                      <p>
+                        Price: £{property.price.toLocaleString()} | Bedrooms: {property.bedrooms}
+                      </p>
+                      <p>{property.shortdescription.slice(0, 1000)}</p>
+                    </Card.Body>
+                     <Card.Footer>
+                      <Button
+                        variant="primary"
+                        className="w-100"
+                        onClick={() => navigate(`/property-${property.id}`) } // Replace alert with navigation logic
+                      >
+                        View More Details
+                      </Button>
+                    </Card.Footer>
+                  </Card>
+                </Col>
+              ))
+            ) : (
+              <Col xs={12}>
+                <div className="text-center py-5">
+                  <h3>No properties found matching your criteria</h3>
+                  <p>Try adjusting your search filters</p>
+                </div>
+              </Col>
+            )}
+          </Row>
+        </Col>
       </Row>
     </Container>
   );
