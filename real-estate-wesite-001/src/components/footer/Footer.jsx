@@ -12,7 +12,7 @@ function Footer() {
             <div className="d-flex align-items-center mb-3">
               <span className="logo-icon me-2"></span>
               <h3 className="fw-bold text-success">KeyNest</h3>
-        
+             
             </div>
             <p>Do You Need Help? Connect With Us</p>
             <ul className="social-icons list-unstyled d-flex">
