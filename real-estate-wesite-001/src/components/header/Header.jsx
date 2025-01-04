@@ -12,7 +12,7 @@ function Header() {
     <Navbar expand="lg" className="bg-light shadow-sm">
       <Container>
         <Navbar.Brand href="/" className="d-flex align-items-center">
-          <BiHomeAlt size={30} className="me-2" style={{ color: 'green' }} />
+          <BiHomeAlt size={50} className="me-2" style={{ color: 'green' }} />
           <div>
             <h3 className="fw-bold text-success">KeyNest</h3>
             <h5 className="fw-bold text-muted" style={{ fontSize: '0.8rem' }}>
@@ -32,9 +32,6 @@ function Header() {
             </NavLink>
             <NavLink to="/properties" className="nav-link fw-bold">
               Property Details
-            </NavLink>
-            <NavLink to="/packages" className="nav-link fw-bold">
-              Packages
             </NavLink>
             <NavLink to="/contact" className="nav-link fw-bold">
               Contact
