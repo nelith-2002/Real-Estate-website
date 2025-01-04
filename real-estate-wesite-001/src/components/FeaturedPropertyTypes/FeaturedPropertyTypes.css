@@ -1,0 +1,64 @@
+/* Featured Property Types Section */
+.featured-property-types {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.property-card {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding: 20px;
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.property-card .icon-wrapper {
+    background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
+    border-radius: 50%;
+    padding: 15px;
+    display: inline-block;
+}
+
+.property-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.property-card h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.property-card .text-muted {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .featured-property-types {
+        padding: 20px;
+    }
+}
