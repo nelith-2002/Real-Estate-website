@@ -1,0 +1,61 @@
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 0;
+    
+}
+
+/* Page Heading Styles */
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact-caption {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 2rem;
+}
+
+/* Form Wrapper Styles */
+.contact-form-wrapper {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+.form-title {
+    font-size: 1.5rem;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Input Styles */
+.form-input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
