@@ -30,7 +30,7 @@ const formatDate = (date) => {
 const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFavorites }) => {
   const [searchParams] = useSearchParams();
   const [filteredProperties, setFilteredProperties] = useState([]);
-  const navigate = useNavigate(); // Import and use `useNavigate`
+  const navigate = useNavigate();
 
   useEffect(() => {
     const filterProperties = () => {
@@ -42,7 +42,8 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
         const maxPrice = searchParams.get('maxPrice') ? parseInt(searchParams.get('maxPrice')) : null;
         const minBedrooms = searchParams.get('minBedrooms') ? parseInt(searchParams.get('minBedrooms')) : null;
         const maxBedrooms = searchParams.get('maxBedrooms') ? parseInt(searchParams.get('maxBedrooms')) : null;
-        const dateAdded = searchParams.get('dateAdded');
+        const startDate = searchParams.get('startDate');
+        const endDate = searchParams.get('endDate');
 
         const matchesPostcode = postcode
           ? property.location.toLowerCase().includes(postcode)
@@ -63,13 +64,12 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
           monthMap[property.added.month],
           property.added.day
         );
-        const formattedPropertyDate = formatDate(propertyDate);
 
-        const matchesDate = dateAdded
-          ? formattedPropertyDate === dateAdded
-          : true;
+        const isWithinDateRange =
+          (!startDate || new Date(startDate) <= propertyDate) &&
+          (!endDate || new Date(endDate) >= propertyDate);
 
-        return matchesPostcode && matchesType && matchesPrice && matchesBedrooms && matchesDate;
+        return matchesPostcode && matchesType && matchesPrice && matchesBedrooms && isWithinDateRange;
       });
     };
 
@@ -93,7 +93,7 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
                     style={{ width: '50px', height: '50px', marginRight: '10px', borderRadius: '5px' }}
                   />
                   <div>
-                    <p className="mb-0">£{fav.price.toLocaleString()}</p>
+                    <p className="mb-0">{fav.type} in {fav.location}</p>
                   </div>
                   <Button
                     variant="danger"
@@ -134,9 +134,17 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
                       />
                       <button
                         className="favorite-btn"
-                        onClick={() => addToFavorites(property)}
+                        onClick={() =>
+                          favorites.some((fav) => fav.id === property.id)
+                            ? removeFromFavorites(property.id)
+                            : addToFavorites(property)
+                        }
                       >
-                        <FaHeart />
+                        <FaHeart
+                          color={
+                            favorites.some((fav) => fav.id === property.id) ? 'red' : 'gray'
+                          }
+                        />
                       </button>
                     </div>
                     <Card.Body>
@@ -145,13 +153,13 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
                       <p>
                         Price: £{property.price.toLocaleString()} | Bedrooms: {property.bedrooms}
                       </p>
-                      <p>{property.shortdescription.slice(0, 1000)}</p>
+                      <p>{property.shortdescription.slice(0, 100)}</p>
                     </Card.Body>
-                     <Card.Footer>
+                    <Card.Footer>
                       <Button
                         variant="primary"
                         className="w-100"
-                        onClick={() => navigate(`/property-${property.id}`) } // Replace alert with navigation logic
+                        onClick={() => navigate(`/property-${property.id}`)}
                       >
                         View More Details
                       </Button>
