@@ -13,7 +13,8 @@ const SearchBar = () => {
     maxPrice: '',
     minBedrooms: '',
     maxBedrooms: '',
-    dateAdded: '',
+    startDate: '',
+    endDate: '',
   });
 
   const handleSubmit = (e) => {
@@ -40,7 +41,7 @@ const SearchBar = () => {
       <div className="banner">
         <div className="overlay">
           <Container className="text-center text-white">
-            <h1 className="fw-bold">Search Your Next Home</h1>
+            <h1 className="fw-bold text-3d-effect">Search Your Next Home</h1>
             <p>Discover the latest and top-rated properties available in your city</p>
             <Form className="search-form" onSubmit={handleSubmit}>
               <Row className="gy-3 align-items-end">
@@ -121,12 +122,23 @@ const SearchBar = () => {
                   </Form.Group>
                 </Col>
                 <Col xs={12} md={6} lg={3}>
-                  <Form.Group controlId="dateAdded">
-                    <Form.Label>Date Added</Form.Label>
+                  <Form.Group controlId="startDate">
+                    <Form.Label>Start Date</Form.Label>
                     <Form.Control
                       type="date"
-                      name="dateAdded"
-                      value={searchCriteria.dateAdded}
+                      name="startDate"
+                      value={searchCriteria.startDate}
+                      onChange={handleInputChange}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col xs={12} md={6} lg={3}>
+                  <Form.Group controlId="endDate">
+                    <Form.Label>End Date</Form.Label>
+                    <Form.Control
+                      type="date"
+                      name="endDate"
+                      value={searchCriteria.endDate}
                       onChange={handleInputChange}
                     />
                   </Form.Group>
