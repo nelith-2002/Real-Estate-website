@@ -7,6 +7,7 @@ import About from './About';
 import Contact from './Contact';
 import SearchResults from './SearchResult';
 import FavouriteList from './FavouriteList';  
+import PropertyDetails from './PropertyDetails';
 import Prop1Page from './PropertyPages/Prop1Page';
 import Prop2Page from './PropertyPages/Prop2Page';
 import Prop3Page from './PropertyPages/Prop3Page';
@@ -63,6 +64,7 @@ function Pagenavigator() {
                 />
               }
             />
+            <Route path="/properties" element={<PropertyDetails />} />
             <Route path="/property-prop1" element={<Prop1Page />} />
             <Route path="/property-prop2" element={<Prop2Page />} />
             <Route path="/property-prop3" element={<Prop3Page />} />
