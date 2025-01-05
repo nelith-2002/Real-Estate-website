@@ -48,7 +48,7 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
         const matchesPostcode = postcode
           ? property.location.toLowerCase().includes(postcode)
           : true;
-        const matchesType =
+         const matchesType =
           propertyType && propertyType !== 'any'
             ? property.type.toLowerCase() === propertyType
             : true;
