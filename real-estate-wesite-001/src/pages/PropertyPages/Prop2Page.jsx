@@ -73,15 +73,19 @@ const Prop2Page = () => {
             <Tab eventKey="googlemap" title="Google Map">
               <Row className="justify-content-center mt-3">
                 <Col xs={12}>
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.49010433492!2d-0.0755!3d51.5913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ac6bb8e5f6d%3A0x54e3a814d9ed7d12!2sPetts%20Wood%20Station!5e0!3m2!1sen!2suk!4v123456789"
-                    width="100%"
-                    height="400"
-                    style={{ border: '0' }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="Google Map"
-                  ></iframe>
+                     <iframe
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  property.location
+                )}&output=embed`}
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps"
+              ></iframe>
+
                 </Col>
               </Row>
             </Tab>
