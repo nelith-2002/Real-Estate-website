@@ -1,10 +1,13 @@
-/* Overall Section Styles */
+/* 
+   Overall styling for the Recent Property Listed section.
+   Provides padding and a consistent background color to match the website's theme.
+*/
 .recent-property-listed {
     padding: 50px 0;
     background-color: #f9f9f9;
 }
 
-/* Card Styles */
+/* Styling for property cards displayed in the section */
 .property-card {
     border: none;
     border-radius: 10px;
@@ -14,11 +17,13 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Hover effect for property cards */
 .property-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Styling for property images within the cards */
 .property-image {
     height: 200px;
     object-fit: cover;
@@ -33,7 +38,7 @@
     color: #333;
 }
 
-/* Property Location and Price */
+/* Styling for property location and price details */
 .property-location,
 .property-price,
  .property-details{
