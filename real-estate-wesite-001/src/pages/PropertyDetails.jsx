@@ -41,7 +41,7 @@ const PropertyDetails = () => {
                   </Button>
                 </Card.Body>
               </Card>
-            </Col>
+            </Col> 
           ))}
         </Row>
       </Container>
