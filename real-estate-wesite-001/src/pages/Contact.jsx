@@ -2,6 +2,11 @@
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import './Contact.css';
 
+
+/* 
+   Contact Component
+   Provides a user-friendly form for contacting the company, styled with a clean layout and interactive elements.
+*/
 const Contact = () => {
   return (
     <section className="contact-section">
@@ -18,7 +23,7 @@ const Contact = () => {
 
         {/* Form Section */}
         <Row className="justify-content-center">
-          <Col xs={12} md={10} lg={8}> {/* Increased width */}
+          <Col xs={12} md={10} lg={8}> {/*responsive layout*/}
             <div className="contact-form-wrapper">
               <h2 className="form-title">Fill Up The Form</h2>
               <Form>

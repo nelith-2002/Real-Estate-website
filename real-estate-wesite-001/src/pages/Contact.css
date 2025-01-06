@@ -1,32 +1,42 @@
-/* Contact Section Styles */
+/* 
+   Overall styling for the Contact Us section.
+   Creates a clean and modern layout with a light background for contrast.
+*/
 .contact-section {
     padding: 60px 0;
     background-color: #f8f9fa;
     /* Light background for contrast */
 }
 
-/* Page Heading Styles */
+/* 
+   Styling for the Contact Us title.
+   Ensures the title is bold, prominent, and visually appealing with shadows.
+*/
 .contact-title {
     font-size: 2.5rem;
     font-weight: bold;
     color: black;
-    /* Black text */
+    /* text shadow for the 3D effect */
     text-shadow: 3px 3px 0px white,
-        /* White shadow for the 3D effect */
         6px 6px 0px rgba(0, 0, 0, 0.4);
-    /* Subtle black shadow for depth */
     letter-spacing: 1px;
-    /* Slight spacing for better readability */
     margin-bottom: 0.5rem;
 }
 
+/* 
+   Styling for the subtitle text.
+   Complements the title with a smaller, softer font.
+*/
 .contact-caption {
     font-size: 1rem;
     color: #777;
     margin-bottom: 2rem;
 }
 
-/* Form Wrapper Styles */
+/* 
+   Wrapper styling for the contact form.
+   Provides a card-like design with padding and shadow for better visibility.
+*/
 .contact-form-wrapper {
     background: #fff;
     padding: 30px;
@@ -34,7 +44,10 @@
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Title */
+/* 
+   Styling for the form title.
+   Centers the title and gives it a distinct look to stand out.
+*/
 .form-title {
     font-size: 1.5rem;
     color: #444;
@@ -51,7 +64,10 @@
     font-size: 1rem;
 }
 
-/* Submit Button */
+/* 
+   Styling for the submit button.
+   Ensures it stands out with vibrant color and interactive hover effects.
+*/
 .submit-btn {
     background-color: #28a745;
     color: white;
@@ -63,6 +79,10 @@
     transition: all 0.3s ease;
 }
 
+/* 
+   Hover effect for the submit button.
+   Enhances interactivity with subtle shadow and color change.
+*/
 .submit-btn:hover {
     background-color: #218838;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
