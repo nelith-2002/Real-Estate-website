@@ -2,10 +2,15 @@ import { Carousel, Tab, Tabs, Container, Row, Col } from 'react-bootstrap';
 import properties from '../../components/data/properties.json'; 
 import './PropPage.css';
 
+/* 
+   Prop7Page Component
+   Displays detailed information about a specific property, including a carousel for images, descriptive tabs, and a Google Map location.
+*/
 const Prop7Page = () => {
   // Fetch the property details from properties.json based on the id
   const property = properties.properties.find((prop) => prop.id === 'prop7');
 
+  //Array of properties in a carousel
   const carouselImages = [
     '/src/assets/images/prop7pic1small.jpeg',
     '/src/assets/images/prop7Carousel1.jpg',
@@ -19,7 +24,6 @@ const Prop7Page = () => {
 
   return (
     <Container className="py-5">
-      {/* Property Title */}
       <Row className="justify-content-center">
         <Col xs={12} className="text-center">
           <h1 className="mb-4">{property.type} in {property.location}</h1>

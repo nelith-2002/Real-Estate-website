@@ -3,10 +3,15 @@ import { Carousel, Tab, Tabs, Container, Row, Col } from 'react-bootstrap';
 import properties from '../../components/data/properties.json'; 
 import './PropPage.css';
 
+/* 
+   Prop1Page Component
+   Displays detailed information about a specific property, including a carousel for images, descriptive tabs, and a Google Map location.
+*/
 const Prop1Page = () => {
-  // Fetch the property details from properties.json based on the id
+  // Fetching property details from the JSON file using the property ID
   const property = properties.properties.find((prop) => prop.id === 'prop1');
 
+  // Array of images for the carousel section
   const carouselImages = [
     '/src/assets/images/prop1pic1small.png',
     '/src/assets/images/prop1Carousel1.jpg',
@@ -20,14 +25,12 @@ const Prop1Page = () => {
 
   return (
     <Container className="py-5">
-      {/* Property Title */}
       <Row className="justify-content-center">
         <Col xs={12} className="text-center">
           <h1 className="mb-4">{property.type} in {property.location}</h1>
         </Col>
       </Row>
 
-      {/* Carousel Section */}
       <Row className="justify-content-center">
         <Col xs={12} md={10} lg={8}>
           <Carousel className="mb-4" style={{ borderRadius: '10px' }}>
