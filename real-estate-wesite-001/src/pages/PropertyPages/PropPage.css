@@ -1,4 +1,7 @@
-/* Property Title */
+/* 
+   Styling for the Property Title.
+   Ensures the title is bold, readable, and visually appealing with shadow effects.
+*/
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -8,13 +11,19 @@ h1 {
     text-transform: capitalize;
 }
 
-/* Carousel */
+/* 
+   Styling for images in the Carousel.
+   Ensures consistency and a modern look with rounded corners and shadow.
+*/
 .carousel img {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Tabs */
+/* 
+   Styling for the Tabs navigation in the Property Page.
+   Provides a clean and interactive design for the tab links.
+*/
 #property-tabs .nav-link {
     font-size: 1.1rem;
     font-weight: 500;
@@ -22,11 +31,19 @@ h1 {
     transition: color 0.3s, background-color 0.3s;
 }
 
+/* 
+   Hover effect for Tabs navigation links.
+   Enhances user interaction with a background color and text color change.
+*/
 #property-tabs .nav-link:hover {
     color: #fff;
     background-color: #007bff;
 }
 
+/* 
+   Active Tab styling.
+   Matches the hover effect to indicate the selected tab visually.
+*/
 #property-tabs .nav-link.active {
     color: #fff;
     background-color: #007bff;
