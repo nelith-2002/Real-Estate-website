@@ -81,7 +81,7 @@
     line-height: 1.5;
 }
 
-/* Favorite List Sidebar */
+/* Sticky Sidebar */
 .sticky-sidebar {
     position: sticky;
     top: 20px;
@@ -89,7 +89,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    overflow-y: auto;
     max-height: 80vh;
 }
 
@@ -124,21 +123,18 @@
     color: #333;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .sticky-sidebar {
-        max-height: 60vh;
-    }
-
-    .property-image {
-        height: 150px;
-    }
-
-    .property-title {
-        font-size: 1.1rem;
-    }
-
-    .property-price {
-        font-size: 1rem;
-    }
+/* 3D Text Effect */
+h1.text-center {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    /* Black text */
+    text-shadow: 3px 3px 0px white,
+        /* White shadow for 3D effect */
+        6px 6px 0px rgba(0, 0, 0, 0.4);
+    /* Subtle black shadow for depth */
+    letter-spacing: 1px;
+    /* Slight spacing for better readability */
+    margin-bottom: 30px;
+    text-align: center;
 }

@@ -124,7 +124,7 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
           <Row className="g-4">
             {filteredProperties.length > 0 ? (
               filteredProperties.map((property) => (
-                <Col key={property.id} xs={12} md={6} lg={4}>
+                <Col key={property.id} xs={12} sm={6} md={4}>
                   <Card className="h-100 property-card">
                     <div className="position-relative">
                       <Card.Img
