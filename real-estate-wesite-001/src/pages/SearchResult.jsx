@@ -5,6 +5,13 @@ import { FaHeart, FaMinusCircle } from 'react-icons/fa';
 import data from '../components/data/properties.json'; // Adjust the path if needed
 import './SearchResult.css';
 
+/* 
+   SearchResults Component
+   Displays properties matching search criteria and allows users to manage favorites.
+   Features a sidebar for favorite properties and a grid layout for search results.
+*/
+
+/*mothmap of months to numbers to be used in date comparison */
 const monthMap = {
   January: 0,
   February: 1,
@@ -20,6 +27,7 @@ const monthMap = {
   December: 11,
 };
 
+/* format date to YYYY-MM-DD for comparison */
 const formatDate = (date) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based
@@ -27,11 +35,13 @@ const formatDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
+/* SearchResults Component */
 const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFavorites }) => {
   const [searchParams] = useSearchParams();
   const [filteredProperties, setFilteredProperties] = useState([]);
   const navigate = useNavigate();
 
+  /* filter properties based on search criteria */
   useEffect(() => {
     const filterProperties = () => {
       const properties = data.properties || [];
@@ -44,7 +54,8 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
         const maxBedrooms = searchParams.get('maxBedrooms') ? parseInt(searchParams.get('maxBedrooms')) : null;
         const startDate = searchParams.get('startDate');
         const endDate = searchParams.get('endDate');
-
+        
+        /* Check if the property matches the search criteria*/
         const matchesPostcode = postcode
           ? property.location.toLowerCase().includes(postcode)
           : true;
@@ -59,12 +70,14 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
           (minBedrooms ? property.bedrooms >= minBedrooms : true) &&
           (maxBedrooms ? property.bedrooms <= maxBedrooms : true);
 
+        /* Check if the property is within the date range */
         const propertyDate = new Date(
           property.added.year,
           monthMap[property.added.month],
           property.added.day
         );
 
+        /* Check if the property is within the date range */
         const isWithinDateRange =
           (!startDate || new Date(startDate) <= propertyDate) &&
           (!endDate || new Date(endDate) >= propertyDate);
@@ -76,6 +89,7 @@ const SearchResults = ({ favorites, addToFavorites, removeFromFavorites, clearFa
     setFilteredProperties(filterProperties());
   }, [searchParams]);
 
+  /* Add or remove property from favorites */
   return (
     <Container fluid className="py-5">
       <Row>

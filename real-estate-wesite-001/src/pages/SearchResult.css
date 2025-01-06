@@ -1,4 +1,7 @@
-/* Search Result Page */
+/* 
+   Styling for the property cards on the search result page.
+   Ensures a clean layout with hover effects for interactivity.
+*/
 .property-card {
     border: none;
     overflow: hidden;
@@ -7,17 +10,20 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Hover effect for property cards */
 .property-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Styling for property images */
 .property-image {
     height: 200px;
     object-fit: cover;
     border-bottom: 1px solid #f5f1f1;
 }
 
+/* Favorite button styling */
 .favorite-btn {
     position: absolute;
     top: 10px;
@@ -35,11 +41,13 @@
     color: #666;
 }
 
+/* Hover effect for the favorite button */
 .favorite-btn:hover {
     color: #ff6b6b;
     transform: scale(1.1);
 }
 
+/* Styling for the property title */
 .property-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -47,6 +55,7 @@
     color: #333;
 }
 
+/* Styling for property location details */
 .property-location {
     color: #666;
     font-size: 0.9rem;
@@ -81,7 +90,7 @@
     line-height: 1.5;
 }
 
-/* Sticky Sidebar */
+/* Sticky sidebar styling */
 .sticky-sidebar {
     position: sticky;
     top: 20px;
@@ -123,18 +132,15 @@
     color: #333;
 }
 
-/* 3D Text Effect */
+/* Styling for the 3D effect in the heading */
 h1.text-center {
     font-size: 2.5rem;
     font-weight: bold;
     color: black;
-    /* Black text */
+   /* text shadow for the 3D effect */
     text-shadow: 3px 3px 0px white,
-        /* White shadow for 3D effect */
         6px 6px 0px rgba(0, 0, 0, 0.4);
-    /* Subtle black shadow for depth */
     letter-spacing: 1px;
-    /* Slight spacing for better readability */
     margin-bottom: 30px;
     text-align: center;
 }
