@@ -8,13 +8,10 @@
     font-size: 2.5rem;
     font-weight: bold;
     color: black;
-    /* Black text */
+    /*text shadow for the 3D effect*/
     text-shadow: 3px 3px 0px white,
-        /* White shadow for the 3D effect */
         6px 6px 0px rgba(0, 0, 0, 0.4);
-    /* Subtle black shadow for depth */
     letter-spacing: 1px;
-    /* Slight spacing for better readability */
     margin-bottom: 30px;
     text-align: center;
 }

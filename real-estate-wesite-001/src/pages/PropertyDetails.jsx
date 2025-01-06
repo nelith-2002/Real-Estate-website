@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import properties from '../components/data/properties.json';
-import './PropertyDetails.css';
+import properties from '../components/data/properties.json'; // Importing property data from JSON file
+import './PropertyDetails.css'; // Custom styles for the Property Details section
 
+/* 
+   PropertyDetails Component
+   Displays a grid of all properties available, fetched from a JSON file. Each property card includes key details and a button to view more information.
+*/
 const PropertyDetails = () => {
-  const navigate = useNavigate();
-  const [propertyList, setPropertyList] = useState([]);
+  const navigate = useNavigate();  // React Router's hook for navigation
+  const [propertyList, setPropertyList] = useState([]);  // State to hold the list of properties
 
+   // Fetch the property data when the component mounts
   useEffect(() => {
-    // Fetch the properties from properties.json
-    setPropertyList(properties.properties);
+    setPropertyList(properties.properties); // Load properties from JSON into the state
   }, []);
 
   return (
