@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+import { Form, Row, Col, Container } from 'react-bootstrap';
+import Select from 'react-select'; // For the enhanced dropdown
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import DatePicker from 'react-datepicker'; // For the date picker
+import 'react-datepicker/dist/react-datepicker.css'; // Importing DatePicker styles
 import './SearchBar.css';
 
 const SearchBar = () => {
   const navigate = useNavigate();
   const [searchCriteria, setSearchCriteria] = useState({
     postcode: '',
-    propertyType: 'any',
+    propertyType: { value: 'any', label: 'Any' }, // Using react-select format
     minPrice: '',
     maxPrice: '',
     minBedrooms: '',
     maxBedrooms: '',
-    startDate: '',
-    endDate: '',
+    startDate: null, // Use Date objects for DatePicker
+    endDate: null,   // Use Date objects for DatePicker
   });
 
   const handleSubmit = (e) => {
@@ -22,29 +25,71 @@ const SearchBar = () => {
     const queryParams = new URLSearchParams();
 
     Object.entries(searchCriteria).forEach(([key, value]) => {
-      if (value.trim()) queryParams.append(key, value);
+      if (value) {
+        // Format dates as strings or use the value for react-select
+        const formattedValue =
+          value instanceof Date
+            ? value.toISOString().split('T')[0]
+            : value.value || value.trim();
+        queryParams.append(key, formattedValue);
+      }
     });
 
     navigate(`/search?${queryParams.toString()}`);
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (name, value) => {
     setSearchCriteria((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
+  const propertyTypeOptions = [
+    { value: 'any', label: 'Any' },
+    { value: 'flat', label: 'Flat' },
+    { value: 'house', label: 'House' },
+  ];
+
+  const customSelectStyles = {
+    control: (provided) => ({
+      ...provided,
+      borderRadius: '5px',
+      border: '1px solid #ced4da',
+      boxShadow: 'none',
+      padding: '5px',
+      fontSize: '0.9rem',
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      fontSize: '0.9rem',
+      color: state.isSelected ? '#fff' : '#333',
+      backgroundColor: state.isSelected ? '#007bff' : state.isFocused ? '#f8f9fa' : '#fff',
+      padding: '10px',
+      cursor: 'pointer',
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: '5px',
+      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+    }),
+  };
+
   return (
     <section className="search-bar">
-      <div className="banner">
+      {/* Banner Section */}
+      <div className="banner d-flex flex-column justify-content-center align-items-center">
+        {/* Overlay for semi-transparent effect */}
         <div className="overlay">
           <Container className="text-center text-white">
+            {/* Title and Subtitle */}
             <h1 className="fw-bold text-3d-effect">Search Your Next Home</h1>
             <p>Discover the latest and top-rated properties available in your city</p>
-            <Form className="search-form" onSubmit={handleSubmit}>
-              <Row className="gy-3 align-items-end">
+
+            {/* Search Form */}
+            <Form className="search-form mt-4" onSubmit={handleSubmit}>
+              <Row className="gy-3">
+                {/* Post Code */}
                 <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="postcode">
                     <Form.Label>Post Code</Form.Label>
@@ -53,24 +98,25 @@ const SearchBar = () => {
                       placeholder="Ex-BR1, NW1"
                       name="postcode"
                       value={searchCriteria.postcode}
-                      onChange={handleInputChange}
+                      onChange={(e) => handleInputChange("postcode", e.target.value)}
                     />
                   </Form.Group>
                 </Col>
+
+                {/* Property Type */}
                 <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="propertyType">
                     <Form.Label>Property Type</Form.Label>
-                    <Form.Select
-                      name="propertyType"
+                    <Select
+                      options={propertyTypeOptions}
                       value={searchCriteria.propertyType}
-                      onChange={handleInputChange}
-                    >
-                      <option value="any">Any</option>
-                      <option value="flat">Flat</option>
-                      <option value="house">House</option>
-                    </Form.Select>
+                      onChange={(selectedOption) => handleInputChange("propertyType", selectedOption)}
+                      styles={customSelectStyles}
+                    />
                   </Form.Group>
                 </Col>
+
+                {/* Price Range */}
                 <Col xs={12} md={6} lg={3}>
                   <Form.Group controlId="priceRange">
                     <Form.Label>Price Range</Form.Label>
@@ -81,7 +127,7 @@ const SearchBar = () => {
                           placeholder="Min Price"
                           name="minPrice"
                           value={searchCriteria.minPrice}
-                          onChange={handleInputChange}
+                          onChange={(e) => handleInputChange("minPrice", e.target.value)}
                         />
                       </Col>
                       <Col>
@@ -90,13 +136,15 @@ const SearchBar = () => {
                           placeholder="Max Price"
                           name="maxPrice"
                           value={searchCriteria.maxPrice}
-                          onChange={handleInputChange}
+                          onChange={(e) => handleInputChange("maxPrice", e.target.value)}
                         />
                       </Col>
                     </Row>
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={6} lg={3}>
+
+                {/* Bedrooms */}
+                <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="bedrooms">
                     <Form.Label>Bedrooms</Form.Label>
                     <Row>
@@ -106,7 +154,7 @@ const SearchBar = () => {
                           placeholder="Min"
                           name="minBedrooms"
                           value={searchCriteria.minBedrooms}
-                          onChange={handleInputChange}
+                          onChange={(e) => handleInputChange("minBedrooms", e.target.value)}
                         />
                       </Col>
                       <Col>
@@ -115,42 +163,49 @@ const SearchBar = () => {
                           placeholder="Max"
                           name="maxBedrooms"
                           value={searchCriteria.maxBedrooms}
-                          onChange={handleInputChange}
+                          onChange={(e) => handleInputChange("maxBedrooms", e.target.value)}
                         />
                       </Col>
                     </Row>
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={6} lg={3}>
+
+                {/* Start Date */}
+                <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="startDate">
                     <Form.Label>Start Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="startDate"
-                      value={searchCriteria.startDate}
-                      onChange={handleInputChange}
+                    <DatePicker
+                      selected={searchCriteria.startDate}
+                      onChange={(date) => handleInputChange("startDate", date)}
+                      className="form-control"
+                      placeholderText="Select Start Date"
+                      dateFormat="yyyy-MM-dd"
                     />
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={6} lg={3}>
+
+                {/* End Date */}
+                <Col xs={12} sm={6} md={4} lg={3}>
                   <Form.Group controlId="endDate">
                     <Form.Label>End Date</Form.Label>
-                    <Form.Control
-                      type="date"
-                      name="endDate"
-                      value={searchCriteria.endDate}
-                      onChange={handleInputChange}
+                    <DatePicker
+                      selected={searchCriteria.endDate}
+                      onChange={(date) => handleInputChange("endDate", date)}
+                      className="form-control"
+                      placeholderText="Select End Date"
+                      dateFormat="yyyy-MM-dd"
                     />
                   </Form.Group>
                 </Col>
-                <Col xs={12} md={6} lg={2} className="text-center">
-                  <Button
-                    variant="success"
+
+                {/* Search Button */}
+                <Col xs={12} md={6} lg={2}>
+                  <button
                     type="submit"
-                    className="w-100 d-flex align-items-center justify-content-center"
+                    className="btn btn-success w-100 d-flex align-items-center justify-content-center"
                   >
                     <FaSearch className="me-2" /> Search
-                  </Button>
+                  </button>
                 </Col>
               </Row>
             </Form>
