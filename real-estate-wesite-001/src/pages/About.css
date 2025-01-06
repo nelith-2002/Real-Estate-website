@@ -1,31 +1,43 @@
-/* About Us Section */
+/* 
+   Overall styling for the About Us section.
+   Ensures a clean and modern layout with a light background for contrast.
+*/
 .about-us {
     padding: 60px 0;
     background-color: #f8f9fa;
-    /* Light background for contrast */
+    
 }
 
+
+/* 
+   Styling for the title of the About Us section.
+   Ensures the title is bold, eye-catching, and visually appealing.
+*/
 .about-title {
     font-size: 2.5rem;
     font-weight: bold;
     color: black;
-    /* Black text */
+    /* text shadow for the 3D effect */
     text-shadow: 3px 3px 0px white,
-        /* White shadow for 3D effect */
         6px 6px 0px rgba(0, 0, 0, 0.4);
-    /* Slightly faded black for depth */
     letter-spacing: 1px;
-    /* Slight spacing for a clean look */
     margin-bottom: 0.5rem;
 }
 
+/* 
+   Styling for the subtitle of the About Us section.
+   Complements the title with a smaller, lighter font.
+*/
 .about-subtitle {
     font-size: 1rem;
     color: #555;
     margin-bottom: 1rem;
 }
 
-/* Content Section */
+/* 
+   Styling for the content section of About Us.
+   Separates content into well-defined sections for readability.
+*/
 .about-content-section {
     margin-top: 40px;
 }
@@ -35,7 +47,10 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* About Heading */
+/* 
+   Styling for headings in the About Us content.
+   Differentiates content headings from general text for visual hierarchy.
+*/
 .about-heading {
     font-size: 1.8rem;
     font-weight: bold;
@@ -43,7 +58,10 @@
     margin-bottom: 1rem;
 }
 
-/* About Content */
+/* 
+   Styling for content text in About Us.
+   Focuses on readability with adequate line height and subtle coloring.
+*/
 .about-content {
     font-size: 1rem;
     color: #555;
@@ -51,7 +69,10 @@
     margin-bottom: 1.5rem;
 }
 
-/* Vision and Mission Section */
+/* 
+   Styling for the bordered sections (e.g., Vision and Mission).
+   Adds a clean, card-like design to highlight key information.
+*/
 .about-bordered-section {
     background: #fff;
     border: 1px solid #ddd;

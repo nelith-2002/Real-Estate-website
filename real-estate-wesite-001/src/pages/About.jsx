@@ -1,11 +1,15 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import './About.css';
 
+/* 
+   About Component
+   Provides a detailed overview of the company, including sections for Who We Are, Vision, and Mission.
+*/
 const About = () => {
   return (
     <section className="about-us">
       <Container>
-        {/* Header Section */}
+       {/* Header Section: Title and Subtitle */}
         <Row className="justify-content-center text-center mb-4">
           <Col xs={12}>
             <h1 className="about-title">About Us</h1>
