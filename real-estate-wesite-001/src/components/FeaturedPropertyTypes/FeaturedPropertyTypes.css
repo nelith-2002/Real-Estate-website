@@ -1,38 +1,48 @@
-/* Updated CSS for the Featured Property Types Section */
+/* 
+   Styling for the Featured Property Types Section.
+   This section showcases various property types in a visually appealing and interactive layout.
+*/
 .featured-property-types {
+    /* Section background, rounded corners, and subtle shadow for depth */
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 40px 0;
 }
 
+/* Title styling for the section header */
 .section-title {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
 }
 
+/* Subtitle styling for additional context under the main title */
 .section-subtitle {
     font-size: 1.2rem;
     color: #777;
     margin-top: 10px;
 }
 
+/* Styling for individual property cards */
 .property-card {
     background: white;
     border: none;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    /* Adds smooth hover effects for interactivity */
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     padding: 20px;
 }
 
+/* Hover effect for property cards to enhance interactivity */
 .property-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Wrapper for circular icon background */
 .icon-wrapper {
     background: linear-gradient(to bottom right, #e8f5e9, #c8e6c9);
     border-radius: 50%;
@@ -40,17 +50,20 @@
     display: inline-block;
 }
 
+/* Icon styling for property types */
 .property-icon {
     width: 50px;
     height: 50px;
 }
 
+/* Styling for property type labels */
 .property-card h5 {
     font-size: 1.25rem;
     font-weight: bold;
     color: #333;
 }
 
+/* Styling for property type descriptions,Subtext or muted description for additional details */
 .property-card .text-muted {
     font-size: 0.9rem;
     margin-top: 5px;
