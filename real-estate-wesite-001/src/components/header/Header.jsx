@@ -7,8 +7,14 @@ import { BiHomeAlt, BiListUl } from 'react-icons/bi'; // For icons (e.g., Home, 
 import { NavLink } from 'react-router-dom'; // For React Router links
 import './Header.css'; // For styling
 
+/* 
+   Header Component
+   Displays a responsive navigation bar with branding, navigation links, and action buttons.
+*/
+
 function Header() {
   return (
+    /* Main navigation bar with light background and subtle shadow */
     <Navbar expand="lg" className="bg-light shadow-sm">
       <Container>
         <Navbar.Brand href="/" className="d-flex align-items-center">
@@ -20,6 +26,7 @@ function Header() {
             </h5>
           </div>
         </Navbar.Brand>
+        {/* Navbar toggle button for mobile devices */}
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto ms-3">
@@ -37,6 +44,7 @@ function Header() {
               Contact
             </NavLink>
           </Nav>
+          {/* Sign In button and My List link */}
           <div className="d-flex align-items-center">
             <div className="me-3 d-flex align-items-center">
               <BiListUl size={24} style={{ color: 'green' }} />
@@ -44,6 +52,7 @@ function Header() {
                 My List
               </NavLink>
             </div>
+            {/* Replace href with React Router's NavLink */}
             <Button variant="success" className="d-flex align-items-center">
               <FaSignInAlt className="me-2" />
               Sign In

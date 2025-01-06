@@ -1,4 +1,7 @@
-/* Header.css */
+/* 
+   Styling for the Navbar (Header section).
+   Ensures a sticky and responsive navigation bar with a clean, modern design.
+*/
 .navbar {
     position: sticky;
         top: 0;
@@ -7,6 +10,7 @@
         border-bottom: 1px solid #ddd;
 }
 
+/* Styling for navigation links in the navbar */
 .nav-link {
     font-size: 1rem;
     text-transform: uppercase;
@@ -14,14 +18,17 @@
     color: black !important;
 }
 
+/* Hover effect for navigation links */
 .nav-link:hover {
     text-decoration: underline;
 }
 
+/* Styling for the brand text in the navbar */
 .navbar-brand span {
     font-family: 'Arial', sans-serif;
 }
 
+/* Button styling in the header */
 button {
     text-transform: uppercase;
     font-size: 0.9rem;
