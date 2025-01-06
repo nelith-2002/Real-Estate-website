@@ -1,27 +1,33 @@
-/* Banner Section */
+/* 
+   Styling for the Banner Section in the Search Bar.
+   Provides a visually appealing banner with an overlay for text and a search form.
+*/
+
 .search-bar .banner {
     background-image: url('../../assets/images/banner.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the entire banner area */
+    background-position: center; /* Centers the image within the banner */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     height: 80vh;
     width: 100%;
-    position: relative;
+    position: relative; /* Positions the banner for child element placement */
     margin: 0;
     padding: 0;
 }
 
+/* Semi-transparent overlay for the banner */
 .search-bar .overlay {
-    background-color: rgba(31, 30, 30, 0.6);
+    background-color: rgba(31, 30, 30, 0.6); /* Dark overlay with 60% opacity */
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: absolute; /* Positioned relative to the banner */
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
+    display: flex; /* Enables flexbox for child alignment */
+    align-items: center; /* Vertically centers the content */
 }
 
+/* Ensures container elements stay above the overlay */
 .search-bar .container {
     position: relative;
     z-index: 2;
@@ -32,27 +38,27 @@
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(7, 7, 7, 0.7);
 }
+
+/* Styling for the title text in the banner */
 .search-bar h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
-    /* White text */
+    /* text shadow for the 3D effect */
     text-shadow: 3px 3px 0px #555,
-        /* Dark shadow for depth */
         6px 6px 0px rgba(0, 0, 0, 0.4),
-        /* Slightly faded black for more depth */
         -1px -1px 0px rgba(255, 255, 255, 0.5);
-    /* Subtle white glow effect */
     letter-spacing: 1px;
-    /* Slight spacing for better readability */
 }
 
+/* Styling for the subtitle text */
 .search-bar p {
     font-size: 1rem;
     margin-bottom: 20px;
     opacity: 0.9;
 }
 
+/* Styling for labels within the form */
 .search-form {
     background: rgba(193, 187, 187, 0.9);
     border-radius: 10px;
@@ -60,18 +66,21 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Inputs and dropdowns in the form */
 .search-form .form-group label {
     font-size: 0.9rem;
     font-weight: 500;
     color: #333;
 }
 
+/* Inputs and dropdowns in the form */
 .search-form input,
 .search-form select {
     font-size: 0.9rem;
     border-radius: 5px;
 }
 
+/* Styling for the search button */
 .search-form .btn {
     font-size: 0.9rem;
 }

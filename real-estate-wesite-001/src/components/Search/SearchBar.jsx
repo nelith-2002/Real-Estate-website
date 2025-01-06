@@ -7,8 +7,14 @@ import DatePicker from 'react-datepicker'; // For the date picker
 import 'react-datepicker/dist/react-datepicker.css'; // Importing DatePicker styles
 import './SearchBar.css';
 
+
+/* 
+   SearchBar Component
+   Provides a banner with a search form for filtering properties based on multiple criteria.
+*/
 const SearchBar = () => {
   const navigate = useNavigate();
+   // State for storing the user's search criteria
   const [searchCriteria, setSearchCriteria] = useState({
     postcode: '',
     propertyType: { value: 'any', label: 'Any' }, // Using react-select format
@@ -20,10 +26,12 @@ const SearchBar = () => {
     endDate: null,   // Use Date objects for DatePicker
   });
 
+  // Handles form submission
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevents default form submission
     const queryParams = new URLSearchParams();
 
+    // Iterates over search criteria and appends them as query parameters
     Object.entries(searchCriteria).forEach(([key, value]) => {
       if (value) {
         // Format dates as strings or use the value for react-select
@@ -34,23 +42,26 @@ const SearchBar = () => {
         queryParams.append(key, formattedValue);
       }
     });
-
+   // Navigates to the search results page with query parameters
     navigate(`/search?${queryParams.toString()}`);
   };
 
+   // Handles input and dropdown changes
   const handleInputChange = (name, value) => {
     setSearchCriteria((prev) => ({
-      ...prev,
-      [name]: value,
+      ...prev, // Preserves other criteria
+      [name]: value, // Updates the specific field
     }));
   };
 
+   // Options for property type dropdown
   const propertyTypeOptions = [
     { value: 'any', label: 'Any' },
     { value: 'flat', label: 'Flat' },
     { value: 'house', label: 'House' },
   ];
 
+   // Custom styles for react-select dropdown
   const customSelectStyles = {
     control: (provided) => ({
       ...provided,
