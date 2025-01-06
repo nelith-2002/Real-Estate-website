@@ -2,6 +2,11 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaEnvelope, FaYoutube } from 'react-icons/fa';
 import './Footer.css';
 
+/* 
+   Footer Component
+   Displays the footer of the website, including sections for social links, layouts, company details, and other important links.
+*/
+
 function Footer() {
   return (
     <footer className="footer bg-dark text-light">
@@ -15,6 +20,7 @@ function Footer() {
              
             </div>
             <p>Do You Need Help? Connect With Us</p>
+            {/* Social Icons and Contact Information */}
             <ul className="social-icons list-unstyled d-flex">
               <li className="me-3">
                 <a href="#facebook" className="text-light">
@@ -83,6 +89,7 @@ function Footer() {
           </div>
         </div>
       </div>
+      {/* Bottom Section with Copyright Information */}
       <div className="footer-bottom text-center py-3">
         <p className="mb-1">&copy; 2024 KeyNest. Designed by Nelith Nethsanda</p>
       </div>

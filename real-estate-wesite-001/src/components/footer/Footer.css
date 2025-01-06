@@ -1,4 +1,4 @@
-/* Footer.css */
+/* Footer Section Styling */
 
 .footer {
     background-color: #1a1a2e;
@@ -7,20 +7,24 @@
     
 }
 
+/* Footer section titles (e.g., Layouts, All Sections) */
 .footer h5 {
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
+/* List styling for footer links */
 .footer ul {
     padding: 0;
     list-style: none;
 }
 
+/* Individual list items inside the footer */
 .footer ul li {
     margin-bottom: 0.5rem;
 }
 
+/* Links inside the footer list items */
 .footer ul li a {
     color: #bbbbbb;
     text-decoration: none;
@@ -30,6 +34,7 @@
     color: #ffffff;
 }
 
+/* Social icons styling in the footer */
 .footer .social-icons li {
     display: inline-block;
 }
@@ -38,7 +43,8 @@
     color: #00b894;
 }
 
+/* Footer bottom bar styling */
 .footer-bottom {
-    background-color: #0f3460;
+    background-color: #0f3460; /* Slightly darker shade for the bottom bar */
     font-size: 0.9rem;
 }
